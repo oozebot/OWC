@@ -1,5 +1,5 @@
 <template>
-	<code-btn v-bind="$props" :code="'M112\nM999'" :log="false" color="$props.color || error" :disabled="$props.disabled || isDisabled" :title="$t('button.emergencyStop.title')">
+	<code-btn v-bind="$props" :code="'M112\nM999'" :log="false" color="$props.color || red darken-2 " :disabled="$props.disabled || isDisabled" :title="$t('button.emergencyStop.title')">
 		<v-icon class="mr-1">mdi-flash</v-icon>
 		<span class="hidden-xs-only">
 			{{ $t('button.emergencyStop.caption') }}

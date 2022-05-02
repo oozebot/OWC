@@ -11,42 +11,11 @@
 <template>
 	<v-card>
 		<v-card-title class="pb-0">
-			<v-icon small class="mr-1">mdi-fan</v-icon> {{ $t('panel.fan.caption') }}
-		</v-card-title>
-
-		<v-card-text class="py-0">
-			<v-row align="start">
-				<v-col cols="6" sm="auto" order="1" order-sm="0">
-					<v-btn-toggle v-model="fan" mandatory>
-						<v-btn v-if="currentTool && currentTool.fans.length > 0" :value="-1">
-							{{ $t('panel.fan.toolFan') }}
-						</v-btn>
-
-
-						<template v-for="(fan, index) in fans">
-							<v-btn v-if="fan && fan.thermostatic.heaters.length === 0" :key="index" :value="index" :disabled="uiFrozen">
-								{{ fan.name ? fan.name : $t('panel.fan.fan', [index]) }}
-							</v-btn>
-						</template>
-					</v-btn-toggle>
-				</v-col>
-
-				<v-col cols="12" sm="auto" order="0" order-sm="1" class="flex-sm-grow-1">
-					<percentage-input v-model="fanValue" :disabled="uiFrozen"></percentage-input>
-				</v-col>
-			</v-row>
-		</v-card-text>
-	</v-card>
-</template>
-
-<template>
-	<v-card>
-		<v-card-title class="pb-0">
-			<v-icon small class="mr-1">mdi-fan</v-icon> {{ $t('panel.fan.caption') }}
+			<v-icon small class="mr-1">mdi-led-on</v-icon> {{ $t('panel.light.caption') }}
 		</v-card-title>
 		<v-card-text class="py-0">
 			<v-row align="start">
-				<v-col cols="12" sm="auto" order="0" order-sm="1" class="flex-sm-grow-1">
+				<v-col cols="6" sm="auto" order="0" order-sm="1" class="flex-sm-grow-1">
 					<percentage-input v-model="fanValue" :disabled="uiFrozen"></percentage-input>
 				</v-col>
 			</v-row>
@@ -91,7 +60,7 @@ export default {
 	methods: {
 		...mapActions('machine', ['sendCode']),
 		updateFanSelection() {
-			this.fan = 0;
+			this.fan = 12;
 		}
 	},
 	mounted() {

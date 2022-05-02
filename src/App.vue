@@ -89,18 +89,18 @@ textarea {
 			<v-app-bar-nav-icon v-show="!showBottomNavigation" @click.stop="drawer = !drawer">
 				<v-icon>mdi-menu</v-icon>
 			</v-app-bar-nav-icon>
-			<v-toolbar-title class="px-1">
-				<a href="javascript:void(0)" id="title">{{ name }}</a>
+			<v-toolbar-title style="font-size: 1.6em;">
+				<img src="/img/oozebot.png" height="40" style="vertical-align: middle">
+				&nbsp;<i>oozeBot Elevate</i>&nbsp;
 			</v-toolbar-title>
-			<connect-btn v-if="showConnectButton" class="hidden-xs-only ml-3"/>
-
+			
 			<v-spacer/>
 
 			<code-input class="mx-3 hidden-sm-and-down"/>
 
 			<v-spacer/>
 
-			<upload-btn target="start" :elevation="1" class="mr-3 hidden-sm-and-down"/>
+			<power-btn/> &nbsp;
 			<emergency-btn/>
 		</v-app-bar>
 

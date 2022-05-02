@@ -61,9 +61,13 @@ export default {
 			disconnect: 'Disconnect',
 			disconnecting: 'Disconnecting...'
 		},
+		power: {
+			caption: 'Power',
+			title: 'Power Toggle'
+		},
 		emergencyStop: {
-			caption: 'Emergency Stop',
-			title: 'Enforce an immediate software reset (M112+M999)'
+			caption: 'E-Stop',
+			title: 'Enforce an immediate software reset'
 		},
 		home: {
 			caption: 'Home {0}',
@@ -596,7 +600,7 @@ export default {
 			noExtruders: 'No Extruders'
 		},
 		fan: {
-			caption: 'Fan Control',
+			caption: 'Tool Fan Control',
 			selection: 'Fan Selection:',
 			toolFan: 'Tool Fan',
 			fan: 'Fan {0}'
@@ -607,6 +611,10 @@ export default {
 			toolFan: 'Tool Fan',
 			fan: 'Fan {0}',
 			noFans: 'No Fans'
+		},
+		light: {
+			caption: 'LED Light Control',
+			fan: 'Lights {12}'
 		},
 		jobControl: {
 			caption: 'Job Control',

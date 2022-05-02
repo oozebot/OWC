@@ -114,7 +114,17 @@ export default [
 			/* webpackChunkName: "OnScreenKeyboard" */
 			'./OnScreenKeyboard/index.js'
 		)
-	}),
+	}),	
+	new DwcPlugin({
+		id: 'InputShaping',
+		name: 'Input Shaping',
+		author: 'Duet3D Ltd',
+		version,
+		loadDwcResources: () => import(
+			/* webpackChunkName: "InputShaping" */
+			'./InputShaping/index.js'
+		)
+	}),	
 	// #DWC_PLUGIN# <- this marker is used by the plugin build script, leave it here
 	// Add your own plugins here during development...
 ]

@@ -4,22 +4,17 @@
 			<movement-panel class="mb-2"></movement-panel>
 
 			<v-row v-if="isFFForUnset">
-				<v-col sm="12" :md="(atxPower !== null) ? 9 : 12" :lg="(atxPower !== null) ? 9 : 12" :xl="(atxPower !== null) ? 10 : 12">
+				<v-col sm="12" md="12" lg="12" xl="12">
 					<extrude-panel></extrude-panel>
-				</v-col>
-
-				<v-col v-if="atxPower !== null" md="3" lg="3" xl="2" align-self="center">
-					<atx-panel></atx-panel>
 				</v-col>
 			</v-row>
 
 			<v-row>
-				<v-col sm="12" :md="showATXPanel ? 9 : 12" :lg="showATXPanel ? 9 : 12" :xl="showATXPanel ? 10 : 12">
+				<v-col sm="6" md="6" lg="6" xl="6">
 					<fan-panel></fan-panel>
 				</v-col>
-
-				<v-col v-if="showATXPanel" md="3" lg="3" xl="2" align-self="center">
-					<atx-panel></atx-panel>
+				<v-col sm="6" md="6" lg="6" xl="6">
+					<light-panel></light-panel>
 				</v-col>
 			</v-row>
 		</v-col>
@@ -50,7 +45,7 @@ export default {
 			return !this.machineMode || (this.machineMode === MachineMode.fff);
 		},
 		showATXPanel() {
-			return !this.isFFForUnset && this.atxPower !== null;
+			return false;
 		},
 		showFansPanel() {
 			return (this.currentTool && this.currentTool.fans.length > 0) || this.fans.some(fan => fan && !fan.thermostatic.control);
